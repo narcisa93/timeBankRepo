@@ -5,7 +5,7 @@
     <artifactId>timebank</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>user-registration</name>
+    <name>timebank</name>
 
     <properties>
         <spring.version>4.1.1.RELEASE</spring.version>
@@ -114,7 +114,7 @@
     </dependencies>
 
     <build>
-        <finalName>user-registration</finalName>
+        <finalName>timebank</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
