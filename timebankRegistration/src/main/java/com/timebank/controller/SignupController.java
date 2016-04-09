@@ -11,6 +11,11 @@ import com.timebank.model.User;
 import com.timebank.service.UserService;
 
 import javax.validation.Valid;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -38,7 +43,7 @@ public class SignupController {
                 return "result";
             }
         }
-
+        System.out.println(modelMap.get("firstName"));
         userService.addUser(user);
         modelMap.addAttribute("resultMessage", "Congratulations " + user.getFullName() + "! You are Successfully Signed up.");
         return "result";

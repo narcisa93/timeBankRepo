@@ -32,6 +32,17 @@
 				<td><form:password path="password" /></td>
 				<td><form:errors path="password" /></td>
 			</tr>
+			<tr>
+				<td>Gender</td>
+				<td><form:input path="gender" /></td>
+				<td><form:errors path="gender" /></td>
+			</tr>
+			
+			<tr>
+				<td>Phone number</td>
+				<td><form:input path="phoneNumber" /></td>
+				<td><form:errors path="phoneNumber" /></td>
+			</tr>
 		</table>
 
 		<input type="submit" value="Sign Up" />
