@@ -1,12 +1,12 @@
 
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
 <head>
-	<title>Sign Up Here</title>
+<title>Sign Up Here</title>
 </head>
 <body>
-	<form:form commandName="user">
+	<form:form commandName="user" enctype="multipart/form-data">
 
 		<table>
 			<tr>
@@ -37,11 +37,15 @@
 				<td><form:input path="gender" /></td>
 				<td><form:errors path="gender" /></td>
 			</tr>
-			
+
 			<tr>
 				<td>Phone number</td>
 				<td><form:input path="phoneNumber" /></td>
 				<td><form:errors path="phoneNumber" /></td>
+			</tr>
+			<tr>
+				<th><label for="image">Image (in JPEG format only):</label></th>
+				<td><input name="image" type="file" />
 			</tr>
 		</table>
 
@@ -49,6 +53,8 @@
 
 	</form:form>
 
-	<a href="/timebank/users">All Users</a>    |    <a href="/timebank/login">Login</a>    |    <a href="/timebank/">Sign Up</a>
+	<a href="/timebank/users">All Users</a> |
+	<a href="/timebank/login">Login</a> |
+	<a href="/timebank/">Sign Up</a>
 </body>
 </html>

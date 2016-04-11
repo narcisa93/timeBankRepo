@@ -36,6 +36,8 @@ public class UserDaoImpl implements UserDao {
         userToUpdate.setGender(user.getGender());
        // userToUpdate.setBirthDate(user.getBirthDate());
         userToUpdate.setPhoneNumber(user.getPhoneNumber());
+        userToUpdate.setProfilePicture(user.getProfilePicture());
+
         userToUpdate.setHistory(user.getHistory());
         getCurrentSession().merge(userToUpdate);
     }

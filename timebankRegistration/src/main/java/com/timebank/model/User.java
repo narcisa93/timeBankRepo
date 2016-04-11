@@ -43,6 +43,9 @@ public class User {
     @Column (name = "phone_number")
     String phoneNumber;
     
+    @Column (name = "profile_picture")
+    String profilePicture;
+    
     
     @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn (name = "user_id")
@@ -148,6 +151,14 @@ public class User {
 
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
+	}
+
+	public String getProfilePicture() {
+		return profilePicture;
+	}
+
+	public void setProfilePicture(String profilePicture) {
+		this.profilePicture = profilePicture;
 	}
     
 }
