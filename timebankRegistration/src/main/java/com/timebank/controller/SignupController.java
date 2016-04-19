@@ -62,7 +62,8 @@ public class SignupController implements ServletContextAware{
    	
    	 }
    	 }
- 	 String profilePicturePath =servletContext.getRealPath("/") + "/"+ user.getFirstName() +user.getLastName() + ".jpg";
+ 	 String profilePicturePath ="C:\\Users\\Narcisa\\git\\TImebankRepo\\timebankRegistration\\src\\main\\resources\\uploads"
+		 		+ "\\"+ user.getFirstName() +user.getLastName() + ".jpg";
    	 user.setProfilePicture(profilePicturePath);
    	 System.out.println(profilePicturePath);
         System.out.println(modelMap.get("firstName"));

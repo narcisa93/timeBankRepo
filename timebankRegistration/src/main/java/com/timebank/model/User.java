@@ -60,7 +60,22 @@ public class User {
     private List<Address> addresses = new ArrayList<Address>();
 
 
-    public int getId() {
+    
+    @ManyToMany
+    @JoinTable(
+        name="SKILLS_USERS",
+        joinColumns=@JoinColumn(name="user_id", referencedColumnName="id"),
+        inverseJoinColumns=@JoinColumn(name="id_skill", referencedColumnName="id_skill"))
+    private List<Skill> skills;
+    public List<Skill> getSkills() {
+		return skills;
+	}
+
+	public void setSkills(List<Skill> skills) {
+		this.skills = skills;
+	}
+
+	public int getId() {
         return id;
     }
 

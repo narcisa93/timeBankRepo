@@ -67,15 +67,4 @@ public class ProfileController {
 			out.close();
 			}
 		 
-	 
-	 private static void close(Closeable resource) {
-	        if (resource != null) {
-	            try {
-	                resource.close();
-	            } catch (IOException e) {
-	                // Do your thing with the exception. Print it, log it or mail it.
-	                e.printStackTrace();
-	            }
-	        }
-	    }
 }
