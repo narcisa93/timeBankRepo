@@ -51,8 +51,7 @@ public class User {
     @JoinColumn (name = "user_id")
     private List<UserLoginHistory> history = new ArrayList<UserLoginHistory>();
     
-    @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn (name = "user_id")
+    @OneToMany (fetch = FetchType.LAZY, mappedBy = "user")
     private List<Project> projects = new ArrayList<Project>();
     
     @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL)

@@ -1,5 +1,7 @@
 package com.timebank.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,6 +24,12 @@ public class ProjectServiceImpl implements ProjectService{
 	@Override
 	public void updateProject(Project project) {
 		projectDao.updateProject(project);
+	}
+
+	@Override
+	public List<Project> getProjects() {
+		// TODO Auto-generated method stub
+		return projectDao.getProjects();
 	}
 
 }

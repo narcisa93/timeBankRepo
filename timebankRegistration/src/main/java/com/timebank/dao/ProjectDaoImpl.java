@@ -1,5 +1,7 @@
 package com.timebank.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,11 @@ public class ProjectDaoImpl implements ProjectDao{
 	public void updateProject(Project project) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public List<Project> getProjects() {
+		return getCurrentSession().createQuery("select p from " + Project.class.getName() +" p").list();
 	}
 
 }
