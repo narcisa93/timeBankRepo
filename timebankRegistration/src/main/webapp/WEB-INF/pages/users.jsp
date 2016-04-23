@@ -1,9 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Sadman
-  Date: 8/18/2015
-  Time: 3:49 PM
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
@@ -34,6 +29,6 @@
   </table>
 
   <br/>
-  <a href="/timebankRegistration//users">All Users</a>    |    <a href="/timebankRegistration//login">Login</a>    |    <a href="/timebankRegistration//">Sign Up</a>
+  <a href="/timebank/users">All Users</a>    |    <a href="/timebank/login">Login</a>    |    <a href="/timebank/">Sign Up</a>
 </body>
 </html>

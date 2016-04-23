@@ -16,11 +16,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 
 @Controller
 @RequestMapping ("/login")
 public class LoginController {
-
+	@Autowired 
+	HttpSession session;
     @Autowired
     UserService userService;
 
@@ -41,12 +44,16 @@ public class LoginController {
                 userLoginHistory.setLoginTime(dateFormat.format(date));
                 user.getHistory().add(userLoginHistory);
                 userService.updateUser(user);
+                System.out.println(user.getProfilePicture());
+                modelMap.addAttribute("user",user);
+                session.setAttribute("user", user);
                 modelMap.addAttribute("resultMessage", "Congratulations " + user.getFullName() + "! You are Successfully Logged in.");
-                return "result";
+                return "profile";
             }
         }
+      
         modelMap.addAttribute("resultMessage", "Incorrect Username or Password! Please try again.");
-        return "result";
+        return "profile";
     }
 
 }

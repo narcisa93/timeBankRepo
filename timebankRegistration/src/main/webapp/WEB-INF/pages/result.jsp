@@ -1,9 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Sadman
-  Date: 8/14/2015
-  Time: 11:42 AM
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -12,6 +7,7 @@
 <body>
   ${resultMessage}
   <br/><br/>
-  <a href="/timebankRegistration//users">All Users</a>    |    <a href="/timebankRegistration//login">Login</a>    |    <a href="/timebankRegistration//">Sign Up</a>
+  <a href="/timebank/users">All Users</a>    |    <a href="/timebank/login">Login</a>    |    <a href="/timebank/">Sign Up</a>
+  <a href="/timebank/project">Create project</a> 
 </body>
 </html>
