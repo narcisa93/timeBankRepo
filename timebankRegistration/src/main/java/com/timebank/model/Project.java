@@ -1,6 +1,8 @@
 package com.timebank.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -18,21 +22,28 @@ public class Project implements Serializable {
 
 	@Id
 	@Column(name = "id_project")
-	@GeneratedValue (strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idProject;
-	
+
 	@Column
 	private String title;
 	@Column
 	private String description;
 
-	//@Column
-	//private int estimatedTime;
+	@Column
+	private int offeredTime;
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "user_id", nullable = false)
+	private User user;
+
+    @ManyToMany
+    @JoinTable(
+        name="ACTIVITY",
+        joinColumns=@JoinColumn(name="id_project", referencedColumnName="id_project"),
+        inverseJoinColumns=@JoinColumn(name="id_subscriber", referencedColumnName="id_subscriber"))
+	private List<Subscriber>subscribers = new ArrayList<Subscriber>();
 	
-	 @ManyToOne (fetch = FetchType.EAGER)
-	 @JoinColumn(name = "user_id", nullable = false)
-	 private User user;
-	 
 	public int getIdProject() {
 		return idProject;
 	}
@@ -65,6 +76,12 @@ public class Project implements Serializable {
 		this.user = user;
 	}
 
-	
-	
+	public int getOfferedTime() {
+		return offeredTime;
+	}
+
+	public void setOfferedTimeTime(int offeredTime) {
+		this.offeredTime = offeredTime;
+	}
+
 }

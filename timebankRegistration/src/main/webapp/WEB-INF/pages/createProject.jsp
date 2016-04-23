@@ -20,6 +20,11 @@
 				<td><form:input path="description" /></td>
 				<td><form:errors path="description" /></td>
 			</tr>
+			<tr>
+				<td>Offered time for each activity:</td>
+				<td><form:input path="offeredTime" /></td>
+				<td><form:errors path="offeredTime" /></td>
+			</tr>
 		</table>
 
 		<input type="submit" value="Create project" />

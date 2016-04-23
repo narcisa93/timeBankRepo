@@ -14,7 +14,7 @@ div.posts {
 </head>
 <body>
     <c:forEach var="project" items="${projects}">
-     <div class="posts">${project.getUser().getFullName ()} offers ${project.getTitle()}</div>
+     <div class="posts"><p>${project.getUser().getFullName ()} offers ${project.getTitle()}</p><button>Apply</button></div>
     </c:forEach>
   <a href="/timebank/users">All Users</a>    |    <a href="/timebank/login">Login</a>    |    <a href="/timebank/">Sign Up</a>
 </body>

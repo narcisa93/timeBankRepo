@@ -2,16 +2,20 @@ package com.timebank.dao;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.timebank.model.Project;
+import com.timebank.model.User;
 
 @Repository
 public class ProjectDaoImpl implements ProjectDao{
-
+	@Autowired 
+	HttpSession session;
 	 @Autowired
 	    private SessionFactory sessionFactory;
 
@@ -21,7 +25,9 @@ public class ProjectDaoImpl implements ProjectDao{
 
 	@Override
 	public void addProject(Project project) {
-		 getCurrentSession ().save(project);	
+		User currentUser = (User)session.getAttribute("user");
+		project.setUser(currentUser);
+		getCurrentSession ().save(project);	
 	}
 
 	@Override

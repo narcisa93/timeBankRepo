@@ -15,6 +15,7 @@ import com.timebank.model.User;
 import com.timebank.service.UserService;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import java.io.File;
@@ -32,6 +33,8 @@ public class SignupController implements ServletContextAware{
 	ServletContext servletContext;
     @Autowired
     private UserService userService;
+    @Autowired 
+	HttpSession session;
 
     @RequestMapping(method = RequestMethod.GET)
     public String viewSignup (ModelMap modelMap) {
@@ -69,7 +72,8 @@ public class SignupController implements ServletContextAware{
         System.out.println(modelMap.get("firstName"));
         userService.addUser(user);
         modelMap.addAttribute("resultMessage", "Congratulations " + user.getFullName() + "! You are Successfully Signed up.");
-        return "result";
+        session.setAttribute("user", user);
+        return "profile";
     }
     private void validateImage(MultipartFile image) {
    	 if (!image.getContentType().equals("image/jpeg")) {
